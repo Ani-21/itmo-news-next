@@ -1,0 +1,14 @@
+@import './mixins';
+
+.newsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.newsContainer > * {
+  width: 33%;
+}

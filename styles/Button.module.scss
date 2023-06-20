@@ -1,0 +1,19 @@
+.btnLanguage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.dropDown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.menuItem:hover {
+  background-color: var(--light-blue);
+}

@@ -1,3 +1,12 @@
+@import './colors';
+
+:root {
+  --blue: #{$blue};
+  --purple: #{$purple};
+  --light-blue: #{$light-blue};
+  --grey: #{$grey};
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -13,7 +22,42 @@ body {
 main {
   min-height: calc(100vh - 40px);
   padding: 2rem 0;
-  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+svg {
+  height: 24px;
+  width: 24px;
+}
+
+.logo {
+  height: 16px;
+  width: 162px;
+}
+
+.arrow {
+  height: 12px;
+  width: 12px;
+}
+
+.title {
+  // align-self: flex-start;
+  margin-bottom: 30px;
 }
 
 .container {
@@ -21,4 +65,18 @@ main {
   justify-items: center;
   align-items: center;
   flex-direction: column;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+button,
+input[type='submit'],
+input[type='reset'] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
