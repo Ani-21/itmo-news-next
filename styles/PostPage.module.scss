@@ -1,0 +1,21 @@
+.content {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.body {
+  padding: 30px;
+  width: 400px;
+  height: 224px;
+  position: relative;
+}

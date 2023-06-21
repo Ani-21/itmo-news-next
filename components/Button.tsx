@@ -1,5 +1,5 @@
-import { DownArrowIcon } from './icons/DownArrow';
 import { IButtonLanguage } from '@/models';
+
 import styles from '../styles/Button.module.scss';
 
 interface ButtonProps extends IButtonLanguage {

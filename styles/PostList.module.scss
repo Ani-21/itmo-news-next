@@ -1,6 +1,6 @@
 @import './mixins';
 
-.newsContainer {
+.cards_container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -9,6 +9,14 @@
   gap: 20px;
 }
 
-.newsContainer > * {
+.cards_container > * {
   width: 33%;
+
+  @include xs {
+    width: 100%;
+  }
+
+  @include sm {
+    width: 50%;
+  }
 }
