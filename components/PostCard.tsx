@@ -27,7 +27,17 @@ export const PostCard = ({ post, isLoading }: Props) => {
     >
       <Link href={`/${post.id}`} style={{ textDecoration: 'none' }}>
         <div className={styles.card_header}>
-          <Image src={post.image_big} alt={post.title} fill style={{ ...(isLoading ? { display: 'none' } : {}) }} />
+          {post.image_big ? (
+            <Image
+              src={post.image_big}
+              alt={post.title}
+              fill
+              style={{ ...(isLoading ? { display: 'none' } : {}) }}
+              priority
+            />
+          ) : (
+            <div></div>
+          )}
         </div>
         <div className={styles.card_body}>
           <p className={styles.card_date}>{post.date}</p>

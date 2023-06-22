@@ -1,37 +1,38 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
-import { useGetNewsListQuery } from '@/redux/api/newsService';
 import { IPost } from '@/models';
-import { useAppDispatch } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+
+import { page, locale } from '@/redux/selectors';
+import { useGetPosts } from '@/hooks/useGetPosts';
 
 import { setNewsData } from '../redux/slices/newsSlice';
 import styles from '../styles/PostList.module.scss';
 
 import { PostCard } from './PostCard';
+import { Pagination } from './Pagination';
 
 export const PostList = () => {
-  const [page, setPage] = useState(1);
-  const { data: news, isLoading } = useGetNewsListQuery(page);
+  const curPage = useAppSelector(page);
+  const curLocale = useAppSelector(locale);
+  const dispatch = useAppDispatch();
+  const { data: news, isLoading } = useGetPosts(curPage, curLocale);
 
   const posts = news?.news;
-  const dispatch = useAppDispatch();
-
   useEffect(() => {
     dispatch(setNewsData(posts ?? []));
   }, [dispatch, posts]);
 
-  // if (isLoading) return <h1>Loading</h1>;
-
   return (
     <>
-      <button onClick={() => setPage(page + 1)}>next</button>
-      <h1>{page}</h1>
+      <Pagination />
       <ul className={styles.cards_container}>
         {(isLoading ? Array(9).fill(0) : posts)?.map((post: IPost) => (
           <PostCard key={post.id} post={post} isLoading={isLoading} />
         ))}
       </ul>
+      <Pagination />
     </>
   );
 };

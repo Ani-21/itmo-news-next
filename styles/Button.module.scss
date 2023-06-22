@@ -3,17 +3,25 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  color: black;
+  font-size: 14px;
+}
+
+.is_white {
   color: white;
 }
 
 .dropDown {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   background-color: white;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
 }
 
+.menuItem {
+  padding: 5px 10px;
+}
 .menuItem:hover {
   background-color: var(--light-blue);
 }

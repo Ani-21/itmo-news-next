@@ -1,10 +1,12 @@
 .tab_container {
-  height: 30px;
+  height: 35px;
   padding: 10px 5px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 10px;
   border-radius: 8px;
-  background-color: antiquewhite;
+  background: linear-gradient(to right, var(--blue), var(--purple));
+  color: white;
 }

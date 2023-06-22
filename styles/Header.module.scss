@@ -5,4 +5,22 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.language_menu {
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+
+  &:hover .language_selection {
+    display: block;
+  }
+}
+
+.language_selection {
+  position: absolute;
+  display: none;
+  width: 100%;
+  margin-top: 10px;
 }

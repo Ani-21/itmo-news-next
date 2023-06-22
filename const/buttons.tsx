@@ -1,7 +1,11 @@
 import { EngFlagIcon, RusFlagIcon } from '@/components/icons';
 import { IButtonLanguage } from '@/models';
 
-export const buttonsLanguage: IButtonLanguage[] = [
-  { icon: <RusFlagIcon />, label: 'Рус' },
-  { icon: <EngFlagIcon />, label: 'Eng' },
+interface IButtonsLanguage extends IButtonLanguage {
+  id: number;
+}
+
+export const buttonsLanguage: IButtonsLanguage[] = [
+  { icon: <EngFlagIcon />, label: 'Eng', id: 2 },
+  { icon: <RusFlagIcon />, label: 'Рус', id: 1 },
 ];
