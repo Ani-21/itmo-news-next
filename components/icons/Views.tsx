@@ -1,7 +1,7 @@
 export const ViewsIcon = () => (
   <svg fill="#a8a8a8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442.04 442.04" stroke="#a8a8a8">
-    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
     <g id="SVGRepo_iconCarrier">
       <g>
         <g>

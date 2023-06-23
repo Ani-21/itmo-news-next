@@ -22,7 +22,7 @@ export const useGetPosts = (page: number, locale: number) => {
         const preparedPosts = data.news.map((res: IPost) => ({
           ...res,
           lead: formatString(res.lead),
-          date: formatDate(res.date),
+          date: formatDate(res.date, locale),
         }));
         setData({ ...data, news: preparedPosts });
         setIsLoading(false);

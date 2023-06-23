@@ -2,10 +2,10 @@ import { cnb } from 'cnbuilder';
 
 import { IButtonLanguage } from '@/models';
 
-import styles from '../styles/Button.module.scss';
+import styles from '@/styles/Button.module.scss';
 
 interface ButtonProps extends IButtonLanguage {
-  handleClick: () => void;
+  handleClick?: () => void;
   addOn?: React.ReactNode;
   isWhite?: boolean;
 }

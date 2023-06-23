@@ -5,7 +5,7 @@ import { Open_Sans } from 'next/font/google';
 import { Header } from '@/components/Header';
 
 import { ReduxProvider } from '../../redux/provider';
-import '../../styles/index.scss';
+import '@/styles/index.scss';
 
 const openSans = Open_Sans({ subsets: ['cyrillic'] });
 

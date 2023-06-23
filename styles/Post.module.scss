@@ -20,6 +20,13 @@
   overflow: hidden;
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
   max-width: 382px;
+  @include md {
+    min-width: 382px;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .card_header {

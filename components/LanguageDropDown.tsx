@@ -1,15 +1,28 @@
-import { useAppDispatch } from '@/redux/hooks';
+'use client';
+import { useEffect } from 'react';
+import { useRouter } from 'next-intl/client';
 
-import { setLocale } from '../redux/slices/newsSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
-import styles from '../styles/Button.module.scss';
+import { Language } from '@/models';
+import { locale } from '@/redux/selectors';
 
-import { buttonsLanguage } from '../const/buttons';
+import styles from '@/styles/Button.module.scss';
+
+import { setLocale } from '@/redux/slices/newsSlice';
+
+import { buttonsLanguage } from '@/const/buttons';
 
 import { Button } from './Button';
 
 export const LanguageDropDown = () => {
   const dispatch = useAppDispatch();
+  const curLocale = useAppSelector(locale) === 1 ? Language.RUS : Language.ENG;
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push(curLocale);
+  }, [curLocale, router]);
 
   return (
     <div className={styles.dropDown}>

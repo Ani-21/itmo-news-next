@@ -1,3 +1,10 @@
+export enum Language {
+  RUS = 'ru',
+  ENG = 'en',
+  rusName = 'Рус',
+  engName = 'Eng',
+}
+
 export interface IButtonLanguage {
   icon: React.ReactNode;
   label: string;

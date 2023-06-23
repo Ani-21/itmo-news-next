@@ -3,7 +3,7 @@ import { cnb } from 'cnbuilder';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import styles from '../styles/Post.module.scss';
+import styles from '@/styles/Post.module.scss';
 
 interface IPost {
   id: number;
@@ -23,11 +23,12 @@ export const PostCard = ({ post, isLoading }: Props) => {
     <li
       className={cnb(styles.card_container, {
         [styles.loading]: isLoading,
+        [styles.hidden]: !post.image_big && !post.lead,
       })}
     >
       <Link href={`/${post.id}`} style={{ textDecoration: 'none' }}>
         <div className={styles.card_header}>
-          {post.image_big ? (
+          {post.image_big && (
             <Image
               src={post.image_big}
               alt={post.title}
@@ -35,8 +36,6 @@ export const PostCard = ({ post, isLoading }: Props) => {
               style={{ ...(isLoading ? { display: 'none' } : {}) }}
               priority
             />
-          ) : (
-            <div></div>
           )}
         </div>
         <div className={styles.card_body}>

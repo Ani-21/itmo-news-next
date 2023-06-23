@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { IPost } from '@/models';
 import { useAppSelector } from '@/redux/hooks';
-import { newsData } from '@/redux/selectors';
+import { newsData, locale } from '@/redux/selectors';
 
 import styles from '@/styles/PostPage.module.scss';
 import { PrevIcon, ViewsIcon } from '@/components/icons';
@@ -19,10 +19,11 @@ type Props = {
 
 export default function Post({ params: { id } }: Props) {
   const data = useAppSelector(newsData);
+  const curLocale = useAppSelector(locale);
 
   const foundPost = data.find((post: IPost) => post.id === Number(id))!;
 
-  const transformedPost = formatPost(foundPost);
+  const transformedPost = formatPost(foundPost, curLocale);
 
   return (
     <div className={styles.wrapper}>
@@ -42,10 +43,8 @@ export default function Post({ params: { id } }: Props) {
           </div>
         </header>
         <div className={styles.body}>
-          {transformedPost.image_big !== null ? (
+          {transformedPost.image_big && (
             <Image fill src={transformedPost.image_big} alt={foundPost.title} priority={false} />
-          ) : (
-            <div></div>
           )}
         </div>
         <p>{foundPost.lead}</p>

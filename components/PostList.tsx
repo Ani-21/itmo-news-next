@@ -1,14 +1,15 @@
 'use client';
 import { useEffect } from 'react';
 
-import { IPost } from '@/models';
+import { IPost, Language } from '@/models';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 import { page, locale } from '@/redux/selectors';
 import { useGetPosts } from '@/hooks/useGetPosts';
 
-import { setNewsData } from '../redux/slices/newsSlice';
-import styles from '../styles/PostList.module.scss';
+import styles from '@/styles/PostList.module.scss';
+
+import { setNewsData } from '@/redux/slices/newsSlice';
 
 import { PostCard } from './PostCard';
 import { Pagination } from './Pagination';
@@ -32,7 +33,6 @@ export const PostList = () => {
           <PostCard key={post.id} post={post} isLoading={isLoading} />
         ))}
       </ul>
-      <Pagination />
     </>
   );
 };

@@ -1,30 +1,22 @@
 'use client';
-import { useState } from 'react';
+import Link from 'next/link';
 
-import styles from '../styles/Header.module.scss';
+import styles from '@/styles/Header.module.scss';
+
+import { useAppSelector } from '@/redux/hooks';
+import { locale } from '@/redux/selectors';
 
 import { ItmoLogoIcon } from './icons/ItmoLogo';
-import { DownArrowIcon, RusFlagIcon } from './icons';
-
-import { Button } from './Button';
-import { LanguageDropDown } from './LanguageDropDown';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export const Header = () => {
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
-
+  const curLocale = useAppSelector(locale);
   return (
     <header className={styles.header}>
-      <ItmoLogoIcon />
-      <div className={styles.language_menu}>
-        <Button
-          icon={<RusFlagIcon />}
-          label="Рус"
-          handleClick={() => setIsMenuOpened((prev) => !prev)}
-          addOn={<DownArrowIcon />}
-          isWhite
-        />
-        <div className={styles.language_selection}>{isMenuOpened && <LanguageDropDown />}</div>
-      </div>
+      <Link href="/">
+        <ItmoLogoIcon isEng={curLocale === 2} />
+      </Link>
+      <LanguageSwitcher />
     </header>
   );
 };

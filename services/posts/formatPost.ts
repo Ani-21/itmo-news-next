@@ -10,10 +10,10 @@ type PostCategory = {
 type TransdformedPost = Omit<IPost, 'id' | 'image_small' | 'url' | 'category' | 'parent_category' | 'date'> &
   PostCategory;
 
-export const formatPost = (post: IPost): TransdformedPost => {
+export const formatPost = (post: IPost, locale: number): TransdformedPost => {
   const transformedPost = {
     title: post.title,
-    creation_date: formatDateWithTime(post.creation_date),
+    creation_date: formatDateWithTime(post.creation_date, locale),
     view_count: post.view_count,
     category: post.category.category_title,
     parent_category: post.parent_category.category_title,
