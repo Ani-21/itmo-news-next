@@ -1,6 +1,5 @@
-Тестовое задание: https://docs.google.com/document/d/1mZ2I2ozWrFhJrvWP0N3ttShiwixG3rDr/edit
 
-## Локальный запусе
+## Локальный запуск
 
 Для локальной разработрки
 
